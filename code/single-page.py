@@ -88,7 +88,7 @@ def resultsParser(result):
 def printHTML(result_data):
     with tag('html'):
         with tag('body'):
-            with tag('div', klass="ocr_page"):
+            with tag('div', klass="ocr_page", id="page_1"):
                 for line in result_data:
                     with tag('div', ('title', 'bbox '
                                               + str(int(result_data[line]["BoundingBox"]["Width"]*1000))
