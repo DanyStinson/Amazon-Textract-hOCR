@@ -1,19 +1,17 @@
-# Amazon-Textract-hOCR
+# Amazon Textract to hOCR
 Convert your Amazon Textract results to hOCR output. 
-
-**[08/2021]** Currently available for single page operations. PNG/JPG files allowed. 
-
-### Next implementations:
-- Multi-page operations
-- Form, Tables and Expenses operations
 
 ### Usage Instructions
 
-- Download the **single-page.py** file located in the code folder.
-- Configure your **aws cli** credentials and region.
-- Install the [yattag](https://www.yattag.org/download-install) package (used for HTML generation)
-- Inside **single-page.py**, in the main function, replace the *bucket* and *filename* with your own location. Remember to use PNG or JPG files located in your Amazon S3 bucket.
-- Run the script, it will generate an output.html file
+The code necessary for transforming Amazon Textract text extraction results to hOCR output is located in code/hocrOuput.py.
+
+To make the code work you will need to install the following packages via pip:
+- [Yattag](https://www.yattag.org/download-install) package (used for HTML generation)
+- [Textract-Caller](https://github.com/aws-samples/amazon-textract-textractor/tree/master/caller) to make calls to Amazon Textract
+
+Inside **code/hocrOuput.py**, in the main function, replace the *input_document_url* with your document location in Amazon S3.
+
+Run the script, it will generate an output html file.
 
 ### Output example
 ![Example]( images/textract-hocr-example.png)
